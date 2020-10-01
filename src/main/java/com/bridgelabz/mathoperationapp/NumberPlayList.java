@@ -3,8 +3,8 @@ package com.bridgelabz.mathoperationapp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.Consumer;
-
-
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlayList implements Consumer<Integer> {
 	
@@ -40,5 +40,12 @@ public class NumberPlayList implements Consumer<Integer> {
 			System.out.println(n);
 		};
 		numberList.forEach(consume);
+		
+		System.out.println("\nIterating to display Double values : ");
+		Function<Integer,Double> toDoubleValue=Integer::doubleValue;
+		numberList.forEach(n ->{
+			System.out.println(toDoubleValue.apply(n));
+		});		
+		
 	}
 }
