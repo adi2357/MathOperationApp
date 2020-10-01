@@ -5,6 +5,9 @@ import java.util.Scanner;
 @FunctionalInterface
 interface MathFunction{
 	int calculate(int i,int j);
+	static void printResult(int a, int b, String function, MathFunction mathObject ) {
+		System.out.println(function+" is : "+mathObject.calculate(a, b));
+	}
 }
 public class MathOperation {
 	public static void main(String[] args) {
@@ -19,10 +22,9 @@ public class MathOperation {
 		int a=sc.nextInt();
 		int b=sc.nextInt();
 		
-		System.out.println("Addition is : "+add.calculate(a, b));
-		System.out.println("Substration is : "+subtract.calculate(a, b));
-		System.out.println("Multiplication is : "+multiply.calculate(a, b));
-		System.out.println("Division is : "+divide.calculate(a, b));
+		MathFunction.printResult(a,b,"Addition is : ",add);
+		MathFunction.printResult(a,b,"Substration is : ",subtract);
+		MathFunction.printResult(a,b,"Multiplication is : ",multiply);
+		MathFunction.printResult(a,b,"Division is : ",divide);
 	}
-
 }
