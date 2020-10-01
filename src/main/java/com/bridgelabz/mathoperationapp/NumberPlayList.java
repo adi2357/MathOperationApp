@@ -45,7 +45,12 @@ public class NumberPlayList implements Consumer<Integer> {
 		Function<Integer,Double> toDoubleValue=Integer::doubleValue;
 		numberList.forEach(n ->{
 			System.out.println(toDoubleValue.apply(n));
-		});		
+		});
 		
+		System.out.println("\nIterating to display Even values : ");
+		Predicate<Integer> isEven= n-> n%2==0;
+		numberList.forEach(n ->{
+			System.out.println(n +" is Even : "+isEven.test(n));
+		});
 	}
 }
